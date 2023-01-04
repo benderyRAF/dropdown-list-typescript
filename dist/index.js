@@ -14,9 +14,8 @@ class ExpandingList extends HTMLUListElement {
                 nextul.parentNode.setAttribute('class', 'open');
             }
         };
-        let self = this;
-        const uls = Array.from(self.querySelectorAll('ul'));
-        const lis = Array.from(self.querySelectorAll('li'));
+        const uls = Array.from(this.querySelectorAll('ul'));
+        const lis = Array.from(this.querySelectorAll('li'));
         uls.forEach(ul => {
             ul.style.display = 'none';
         });
@@ -28,7 +27,7 @@ class ExpandingList extends HTMLUListElement {
                 const newSpan = document.createElement('span');
                 newSpan.textContent = childText.textContent;
                 newSpan.style.cursor = 'pointer';
-                newSpan.onclick = self.showul;
+                newSpan.onclick = this.showul;
                 (_a = childText.parentNode) === null || _a === void 0 ? void 0 : _a.insertBefore(newSpan, childText);
                 (_b = childText.parentNode) === null || _b === void 0 ? void 0 : _b.removeChild(childText);
             }
